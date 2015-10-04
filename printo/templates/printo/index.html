@@ -1,0 +1,596 @@
+<html>
+<meta name="csrf-token" content="{{csrf_token}}"> 
+<head>
+	<title>GROUND</title>
+	{% load staticfiles %}
+	<script type="text/javascript" src="{% static 'printo/js/libs/jquery-1.9.1.js' %}"/></script>
+	<!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- jasny-bootstrap -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+	<!-- gmd -->
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- mine -->
+    
+   
+    <link rel="stylesheet" type="text/css" href="{% static 'printo/css/index.css' %}">
+	
+
+
+</head>
+<body>
+
+	<div class="header">
+	</div>
+
+	<div class="well msg_bus">
+		<div id="message">
+		</div>
+	</div>
+	
+	
+	<div class="main-container">
+		
+	</div>
+	
+
+	<div class="modal2">
+	</div>
+
+<script type="text/template" id="emp_template">
+	<div class="leftnav">
+	</div>
+	<div class="centerview">
+	</div>
+	<div class="rightnav">
+	</div>
+</script>
+
+
+<script type="text/template" id="shop_profile_template">
+	<div class="col-md-4">
+		<div class="form-group">
+		    <label for="shopname">Shop Name</label>
+		    <input type="text" class="form-control" id="shopname" placeholder="Shop Name">
+		</div>
+		<div class="form-group">
+		    <label for="owner">Owner</label>
+		    <input type="text" class="form-control" id="owner" value="" disabled>
+		</div>
+		<div class="form-group">
+		    <label for="username">Username</label>
+		    <input type="email" class="form-control" id="username" placeholder="Username">
+		</div>
+		<div class="form-group">
+		    <label for="password1">Password</label>
+		    <input type="password" class="form-control" id="password1" placeholder="Password">
+		</div>
+		<div class="form-group">
+		    <label for="password2">Re-enter Password</label>
+		    <input type="password" class="form-control" id="password2" placeholder="Password">
+		</div>
+		<button type="submit" class="btn btn-primary createshop">Create my SHOP</button>
+	</div>
+</script>
+
+
+<script type="text/template" id="resetlinksend">
+	<h3>A mail has been sent to you</h3>
+	<h5>Please click on the link to reset your password</h5>
+</script>
+
+<script type="text/template" id="header_template">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">PRINTO</a>
+		    </div>
+		    <div id="navbar" class="navbar-collapse collapse">
+
+		      <ul class="nav navbar-nav navbar-right">
+		      	<% if(username != null) { %>
+		        <li><a href="#home" class="home-icon"><span class="glyphicon glyphicon-home white" ></span></a></li>
+		        <li><a href="#mydocs" class="mycopies-icon"><span class="glyphicon glyphicon-folder-open"></span></a></li>
+		     
+		        <li><a href="#">Profile</a></li>
+		        <li><a href="#">Help</a></li>
+		        <li>
+			        <a  class="profile">Hi <%- username %> </a>
+			    </li>
+			    <% } %> 
+		        <li> <button class="btn btn-sm <%- buttonname.toLowerCase() %> auth_button"><%- buttonname %></button></li>
+		      </ul>
+		      
+			    <% if(username != null) { %>
+		      <form class="navbar-form navbar-right">
+		        <input type="text" id="searchdoc" class="form-control" placeholder="Search...">
+		      </form>
+		      <% } %>
+
+		    </div>
+	  	</div>
+	</nav>
+</script>
+
+<script type="text/template" id="verifyemail_template">
+	<h3>Successfully Registered</h3>
+	<h5>Please verify your account by clicking on the link sent to your mail</h5>
+</script>
+
+<script type="text/template" id="registration_template">
+	<div class="hero-unit container">
+		  <form class="form-horizontal">
+		    <div class="control-group">
+		      <label class="control-label" for="username">Username</label>
+		      <div class="controls">
+		        <input type="text" id="username" placeholder="Username">
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <label class="control-label" for="password">Password</label>
+		      <div class="controls">
+		        <input type="password" id="password" placeholder="Password">
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <label class="control-label" for="email">Email</label>
+		      <div class="controls">
+		        <input type="email" id="email" placeholder="Email">
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <div class="controls">
+		        <button type="submit" class="btn" id="registration">Register</button>
+		      </div>
+		    </div>
+		  </form>
+	</div>
+</script>
+
+<script type="text/template" id="forgotpwd">
+
+	<input id="email" placeholder="email"/>
+	<button class="btn btn-primary sendpwd"> Help me </button>
+</script>
+
+<script type="text/template" id="pwdreset">
+
+	<input id="password1" type="password" placeholder="Enter new password">
+	<br><br>
+	<input id="password2" type="password" placeholder="Re-enter new password">
+	<br>
+	<button class="btn btn-primary pwdreset">Save my new password</button>
+
+</script>
+<script type="text/template" id="login_template">
+	
+	<div class="hero-unit container">
+	  <form class="form-horizontal">
+	    <div class="control-group">
+	      <label class="control-label" for="inputEmail">Username</label>
+	      <div class="controls">
+	        <input type="text" id="username" placeholder="Username">
+	      </div>
+	    </div>
+	    <div class="control-group">
+	      <label class="control-label" for="inputPassword">Password</label>
+	      <div class="controls">
+	        <input type="password" id="password" placeholder="Password">
+	      </div>
+	    </div>
+	    <div class="control-group">
+	      <div class="controls">
+	        <button type="submit" class="btn" id="login">Sign in</button>
+	      </div>
+	    </div>
+	  </form>
+	  <button class="forgotpwd">Forgot Password</button>
+	</div>
+</script>
+
+<script type="text/template" id="profile_template">
+	<div class="profile-header ">
+		<div class="row">
+
+			<div class="logo-container col-md-2 ">
+					<h2 class="profile-logo">printo</h2>
+
+			</div>
+			<div id="navmenu" class="col-md-4">
+				<ul>
+					<li><a href="">USER</a></li>
+					<li><a href="">SHOP</a></li>
+				</ul>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-md-3  profile-username">
+				<p><%- user.first_name %> <%- user.last_name %></p>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="row profile-container ">
+		<div class="profile-left col-md-4 ">
+			<div class="fileinput fileinput-new" data-provides="fileinput">
+			  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+			  	<img src="<%- userimage %>"/>
+			  </div>
+			  <div>
+			    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="fileInput"></span>
+
+			    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+			  </div>
+			</div>
+			<div  class="profile-left-inner profile-left-2 ">
+				<p><span>0</span> <br>orders</p>
+			</div>
+		</div>
+		<div class="hero-unit profile-right col-md-6  ">
+			<form class="form-horizontal">
+				  <div class="form-group">
+				    <label for="username" class="col-sm-4 control-label">Username</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="username" placeholder="Email" value="<%- user.username %>">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+				    <div class="col-sm-6">
+				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" value="<%- user.email %>">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="firstname" class="col-sm-4 control-label">First name</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="firstname" placeholder="Email" value="<%- user.first_name %>">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="lastname" class="col-sm-4 control-label">Last name</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="lastname" placeholder="Email" value="<%- user.last_name %>">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="companyname" class="col-sm-4 control-label">Company name</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="companyname" placeholder="Email" value="<%- user.company_name%>">
+				    </div>
+				  </div>
+				  
+			</form>	
+		</div>	
+		<button type="button" class="btn btn-primary btn-xs  profile_save" >Save Changes</button>
+	</div>
+</script>
+
+<script type="text/template" id="home_template">
+	<div class="order_container">
+	   	<div class="panel-group col-md-4 accordian" id="orderlist" role="tablist" aria-multiselectable="true">
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="order_item_template">
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="heading_<%- customer %>">
+		  
+		    <a role="button" data-toggle="collapse" data-parent="#orderlist" href="#<%- customer %>" aria-expanded="true" aria-controls="<%- customer %>">
+		      <%- customer %>
+		    </a>		  
+
+		</div>
+		<div id="<%- customer %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_<%- customer %>">
+			<div class="panel-body">
+			this is the body
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="leftMenu_template">
+	<div class="col-md-2 sidebar leftmenu ">
+          <ul class="nav nav-sidebar">
+          	<li id="shopheader"><%- shop_name %></li>
+          	<% if(user_role == "owner"){ %>
+          	<li><a href="#dashboard" class="mydocuments">DASHBOARD</a></li>
+          	<% } %>
+            <li><a role="button" class="addshop" data-toggle="modal" data-target=".bs-example-modal-sm">Upload a Document</a>
+            </li>
+            <li><a role="button" class="docs">My Documents</a></li>
+            <li><a role="button"  class="orders">Orders</a></li>
+            <li><a role="button"  class="shop_profile">Profile</a></li>
+          </ul>	
+    </div>
+    <div class="modal fade bs-example-modal-sm" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog modal-md " id="mainform">
+		    <div class="modal-content">
+		    	<div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="exampleModalLabel">ADD a DOCUMENT</h4>
+		      	</div>
+		      	<div class="modal-body">
+			      <div id="documents">
+			        <input type="textbox" class="form-control" id="doc_name" placeholder="File Name">
+			        <br>
+			        <input id="pdfUpload" type="file" name="pdfUpload"/>
+			        <br>
+			       
+			        	
+				    	<input type="button" class="btn" id="doc_type" value="Choose file type"/>
+				    	<input type="button" class="btn" id="course" value="Choose a Course"/>
+			      
+				    
+			       	<br>
+			       	<br>
+			      </div>
+			    </div>
+			    <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal" id="add_document">ADD</button>
+			    </div>
+		    </div>
+		  </div>
+		</div>
+
+
+		<div class="modal fade bs-example2-modal-sm sub-modal type-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		  <div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		    	<div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="exampleModalLabel">DOCUMENT TYPE</h4>
+		      	</div>
+		      	<div class="modal-body">
+			    	<div class="btn-group doc_type_choice" data-toggle="buttons">
+						  <label class="btn btn-primary active">
+						    <input type="radio" name="options" id="note" autocomplete="off" value="Note" checked> Note
+						  </label>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="options" id="text" autocomplete="off" value="Textbook" > Textbook
+						  </label>
+					</div>
+					<div class="doc_type_form">
+
+					</div>
+				</div>
+				<div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal" id="type_done">Done</button>
+			    </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal fade bs-example3-modal-sm sub-modal course-modal"  data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		  <div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		    	<div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="exampleModalLabel">COURSES</h4>
+		      	</div>
+		      	<div class="modal-body">
+			    	<div class="btn-group doc_type_choice" data-toggle="buttons">
+						  <label class="btn btn-primary active">
+						    <input type="radio" name="options" id="note" autocomplete="off" value="Note" checked> Note
+						  </label>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="options" id="text" autocomplete="off" value="Textbook" > Textbook
+						  </label>
+					</div>
+					<div class="doc_type_form">
+
+					</div>
+				</div>
+				<div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal" id="type_done">Done</button>
+			    </div>
+		    </div>
+		  </div>
+		</div>
+</script>
+
+<script type="text/template" id="rightMenu_template">
+	<div class="col-md-2 sidebar rightmenu">
+          <ul class="nav nav-sidebar">
+            
+            <li><a href="" class="mydocuments">Filter</a></li>
+            <li><a href="" class="myshops">Orders</a></li>
+          </ul>
+</script>
+
+<script type="text/template" id="document_item_template">
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="heading_<%- name %>">
+		  
+		    <a role="button" data-toggle="collapse" data-parent="#documentlist" href="#<%- name %>" aria-expanded="true" aria-controls="<%- name %>">
+		      <%- name %>
+		    </a>		  
+
+		</div>
+		<div id="<%- name %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_<%- name %>">
+			<div class="panel-body">
+			this is the body
+			</div>
+		</div>
+	</div>
+		
+</script>
+
+<script type="text/template" id="documents_template">
+	<div class="document_container">
+	   	<div class="panel-group col-md-4 accordian" id="documentlist" role="tablist" aria-multiselectable="true">
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="shop_item_template">
+	<td><a href="#mydocs" class="getshop" id="shopPage"> <%= shopName %> </a></td>
+	<td><%- employee %></td>
+	<td>0</td>
+	<td></td>
+  	<td><a target="">Running</a></td>
+  	<td><button class="btn btn-sm btn-primary">Deactivate</button></td>
+</script>
+
+<script type="text/template" id="shops_template">
+	<h5>Shops</h5>
+	<table class="table shop" id="shoplist" class="col-md-4">
+	  		<th>Name </th>
+	  		<th>Username</th>
+	  		<th>No.of orders</th>
+	  		<th>Created On</th>
+	  		<th>Status</th>	
+	  		<th></th>
+	</table>
+</script>
+
+<script type="text/template" id="addshop_template">
+	<div class="col-md-4">
+		<div class="form-group">
+		    <label for="shopname">Shop Name</label>
+		    <input type="text" class="form-control" id="shopname" placeholder="Shop Name">
+		</div>
+		<div class="form-group">
+		    <label for="owner">Owner</label>
+		    <input type="text" class="form-control" id="owner" value="<%- username %>" disabled>
+		</div>
+		<div class="form-group">
+		    <label for="username">Username</label>
+		    <input type="email" class="form-control" id="username" placeholder="Username">
+		</div>
+		<div class="form-group">
+		    <label for="password1">Password</label>
+		    <input type="password" class="form-control" id="password1" placeholder="Password">
+		</div>
+		<div class="form-group">
+		    <label for="password2">Re-enter Password</label>
+		    <input type="password" class="form-control" id="password2" placeholder="Password">
+		</div>
+		<button type="submit" class="btn btn-primary createshop">Create my SHOP</button>
+	</div>
+</script>
+
+<script type="text/template" id="dashboard_template">
+	<div class="container-fluid">
+      	<div class="row">
+	        <div class="col-sm-3 col-md-2 sidebar dashboard-sidebar">
+		          <ul class="nav nav-sidebar">
+		            <li ><a role="button" class="addshop">Add a Shop</a></li>
+		            <li><a href="" class="mydocuments">My Documents</a></li>
+		            <li><a role="button" class="myshops">Shops</a></li>
+		          </ul>
+		          <%
+			          // <ul class="nav nav-sidebar">
+			           
+			          //  <li><a href="">Nav item</a></li>
+			          //   <li><a href="">Nav item again</a></li>
+			          //   <li><a href="">One more nav</a></li>
+			          //   <li><a href="">Another nav item</a></li>
+			          //   <li><a href="">More navigation</a></li>
+			          // </ul>
+			          // <ul class="nav nav-sidebar">
+			          //   <li><a href="">Nav item again</a></li>
+			          //   <li><a href="">One more nav</a></li>
+			          //   <li><a href="">Another nav item</a></li>
+			          // </ul>
+		          %>
+	        </div>
+	        <div id="dashboard_container" class="col-md-10">
+		        
+	        </div>
+
+		</div>
+	</div>
+</script>
+
+<script type="text/template"></script>
+
+<script type="text/template" id="textbook_template">
+	<br>
+	<input class="form-control" id="text_author" type="text" placeholder="Author"/>
+	<br>
+	<input class="form-control" id="text_edition" type="text" placeholder="Edition"/>
+	<br>
+</script>
+
+<script type="text/template" id="notebook_template">
+	<br>
+	<input class="form-control" id="note_author" type="text" placeholder="Owner"/>
+	<br>
+	<input class="form-control" id="note_topic" type="text" placeholder="Topic"/>
+	<br>
+</script>
+
+<script type="text/javascript">
+
+	// Implementing the loader
+		$body = $("body");
+
+		$(document).on({
+		    ajaxStart: function() { $body.addClass("loading");    },
+		     ajaxStop: function() { $body.removeClass("loading"); }    
+		});	
+
+
+		var csrf_func_bb = function(d){
+             var _sync = Backbone.sync;
+              Backbone.sync = function(method, model, options){
+                options.beforeSend = function(xhr){
+                  var token = d || $('meta[name="csrf-token"]').attr('content');
+                   console.log("in backbone setup",token,"---------",xhr,xhr.promise().promise)
+                  xhr.setRequestHeader('X-CSRFToken', token);
+
+                };
+                return _sync(method, model, options);
+              };
+            }
+        var csrf_func_ajax = function(){
+          function csrfSafeMethod(method) {
+                  // these HTTP methods do not require CSRF protection
+                  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+              }
+
+              $.ajaxSetup({
+                  beforeSend: function(xhr, settings) {
+                      if (!this.crossDomain) {
+
+                        var token = $('meta[name="csrf-token"]').attr('content');
+                        console.log("in ajax setup",token)
+                          xhr.setRequestHeader("X-CSRFToken", token);
+                      }
+                  }
+              });
+        }
+        
+        window.onload = function() {
+
+            csrf_func_bb()
+            csrf_func_ajax();  
+            
+            // bootstrap
+        }	
+</script>
+
+
+	<script type="text/javascript" src="{% static 'printo/js/libs/underscore.js' %}"/></script>
+    <script type="text/javascript" src="{% static 'printo/js/libs/json2.js' %}"/></script>
+    <script type="text/javascript" src="{% static 'printo/js/libs/backbone.js' %}"/></script>
+    <script type="text/javascript" src="{% static 'printo/js/main.js' %}"/></script>
+    <script type="text/javascript" src="{% static 'printo/js/menu-js/modernizr.custom.js' %}"/></script>
+    <script type="text/javascript" src="{% static 'printo/js/menu-js/ytmenu.js' %}"/></script>
+   
+   
+</body>
+</html>

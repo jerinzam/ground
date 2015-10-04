@@ -1,0 +1,19 @@
+{% extends "ownerMain.html" %}
+
+{% block content %}
+
+	
+	
+	<h3> Create a Shop </h3>
+	
+	<form action="{% url 'shopCreate' %}" enctype="multipart/form-data" method="post">
+	    {% csrf_token %}
+	    {{ userForm.as_p }}
+	    <p> {{ shopCreateForm.owner.label}} : <input value="{{shopCreateForm.initial.owner}}" disabled/> </p>
+	  {{ shopCreateForm.as_p }}
+
+	    <input type="submit" value="Create" />
+	</form>
+		
+	
+{% endblock %}
