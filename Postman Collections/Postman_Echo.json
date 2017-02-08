@@ -1,0 +1,1514 @@
+{
+  "Name": "Postman Echo",
+  "BaseUri": "https://echo.getpostman.com",
+  "ServerConfiguration": {
+    "Environments": [],
+    "Parameters": []
+  },
+  "ImageUri": "",
+  "Description": "Postman Echo is service you can use to test your REST clients and make sample API calls. It provides endpoints for `GET`, `POST`, `PUT`, various auth mechanisms and other utility endpoints.\n\nThe documentation for the endpoints as well as example responses can be found at [https://echo.getpostman.com](https://echo.getpostman.com?source=echo-collection-app-onboarding)",
+  "Version": "1.0",
+  "AdditionalHeaders": [],
+  "Authentication": {
+    "Type": "Basic",
+    "AuthType": "Basic",
+    "Parameters": [],
+    "AuthGrantTypes": [],
+    "AuthScopes": []
+  },
+  "Endpoints": [
+    {
+      "Name": "DigestAuth Request",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Auth: Digest",
+      "RequiresAuthentication": false,
+      "Route": "/digest-auth",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [
+        {
+          "Example": "xWnkliVQJURqB2x1",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "code"
+        },
+        {
+          "Example": "authorization_code",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "grant_type"
+        },
+        {
+          "Example": "https://www.getpostman.com/oauth2/callback",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "redirect_uri"
+        },
+        {
+          "Example": "abc123",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "client_id"
+        },
+        {
+          "Example": "ssh-secret",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "client_secret"
+        }
+      ],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "DigestAuth Request",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "code",
+              "Value": "xWnkliVQJURqB2x1"
+            },
+            {
+              "IsNull": false,
+              "Name": "grant_type",
+              "Value": "authorization_code"
+            },
+            {
+              "IsNull": false,
+              "Name": "redirect_uri",
+              "Value": "https://www.getpostman.com/oauth2/callback"
+            },
+            {
+              "IsNull": false,
+              "Name": "client_id",
+              "Value": "abc123"
+            },
+            {
+              "IsNull": false,
+              "Name": "client_secret",
+              "Value": "ssh-secret"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "DigestAuth Success",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Auth: Digest",
+      "RequiresAuthentication": false,
+      "Route": "/digest-auth",
+      "Response": {
+        "Optional": false,
+        "Type": "Dynamic",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "DigestAuth Success",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Credentials",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Headers",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Methods",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Origin",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Connection",
+              "Value": "keep-alive"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Encoding",
+              "Value": "gzip"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Length",
+              "Value": "42"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Date",
+              "Value": "Thu, 29 Oct 2015 06:17:51 GMT"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Server",
+              "Value": "nginx/1.6.2"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Vary",
+              "Value": "Accept-Encoding"
+            },
+            {
+              "CheckValue": false,
+              "Name": "X-Powered-By",
+              "Value": "Sails <sailsjs.org>"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Credentials",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Headers",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Methods",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Origin",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Connection",
+              "Value": "keep-alive"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Encoding",
+              "Value": "gzip"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Length",
+              "Value": "42"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Date",
+              "Value": "Thu, 29 Oct 2015 06:17:51 GMT"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Server",
+              "Value": "nginx/1.6.2"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Vary",
+              "Value": "Accept-Encoding"
+            },
+            {
+              "CheckValue": false,
+              "Name": "X-Powered-By",
+              "Value": "Sails <sailsjs.org>"
+            }
+          ],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "{\"authenticated\":true}",
+          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Basic Auth",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Auth: Others",
+      "RequiresAuthentication": true,
+      "Route": "/basic-auth",
+      "Response": {
+        "Optional": false,
+        "Type": "Dynamic",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [
+        {
+          "ErrorCode": 401,
+          "ErrorMessage": "Unauthorized"
+        }
+      ],
+      "TestCases": [
+        {
+          "Name": "Basic Auth",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Credentials",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Headers",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Methods",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Origin",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Connection",
+              "Value": "keep-alive"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Encoding",
+              "Value": "gzip"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Length",
+              "Value": "42"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Date",
+              "Value": "Sat, 31 Oct 2015 06:38:25 GMT"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Server",
+              "Value": "nginx/1.6.2"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Vary",
+              "Value": "Accept-Encoding"
+            },
+            {
+              "CheckValue": false,
+              "Name": "X-Powered-By",
+              "Value": "Sails <sailsjs.org>"
+            }
+          ],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "{\"authenticated\":true}",
+          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "OAuth1.0 Verify Signature",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Auth: Others",
+      "RequiresAuthentication": false,
+      "Route": "/oauth1",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [
+        {
+          "Example": "xWnkliVQJURqB2x1",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "code"
+        },
+        {
+          "Example": "authorization_code",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "grant_type"
+        },
+        {
+          "Example": "https://www.getpostman.com/oauth2/callback",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "redirect_uri"
+        },
+        {
+          "Example": "abc123",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "client_id"
+        },
+        {
+          "Example": "ssh-secret",
+          "ParamFormat": "Form",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "client_secret"
+        }
+      ],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "OAuth1.0 Verify Signature",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "code",
+              "Value": "xWnkliVQJURqB2x1"
+            },
+            {
+              "IsNull": false,
+              "Name": "grant_type",
+              "Value": "authorization_code"
+            },
+            {
+              "IsNull": false,
+              "Name": "redirect_uri",
+              "Value": "https://www.getpostman.com/oauth2/callback"
+            },
+            {
+              "IsNull": false,
+              "Name": "client_id",
+              "Value": "abc123"
+            },
+            {
+              "IsNull": false,
+              "Name": "client_secret",
+              "Value": "ssh-secret"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Set Cookies",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Cookies",
+      "RequiresAuthentication": false,
+      "Route": "/cookies/set",
+      "Response": {
+        "Optional": false,
+        "Type": "Dynamic",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [
+        {
+          "Example": "bar1",
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "foo1"
+        },
+        {
+          "Example": "bar2",
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "foo2"
+        }
+      ],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Set Cookies",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "foo1",
+              "Value": "bar1"
+            },
+            {
+              "IsNull": false,
+              "Name": "foo2",
+              "Value": "bar2"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Credentials",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Headers",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Methods",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Origin",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Connection",
+              "Value": "keep-alive"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Encoding",
+              "Value": "gzip"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Length",
+              "Value": "51"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Date",
+              "Value": "Thu, 29 Oct 2015 06:15:28 GMT"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Server",
+              "Value": "nginx/1.6.2"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Vary",
+              "Value": "Accept-Encoding"
+            },
+            {
+              "CheckValue": false,
+              "Name": "X-Powered-By",
+              "Value": "Sails <sailsjs.org>"
+            }
+          ],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "{\"cookies\":{\"foo1\":\"bar\",\"foo2\":\"bar\"}}",
+          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Delete Cookies",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Cookies",
+      "RequiresAuthentication": false,
+      "Route": "/cookies/delete",
+      "Response": {
+        "Optional": false,
+        "Type": "Dynamic",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [
+        {
+          "Example": "",
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "foo1"
+        },
+        {
+          "Example": "",
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "foo2"
+        }
+      ],
+      "Errors": [],
+      "TestCases": [],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Get Cookies",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Cookies",
+      "RequiresAuthentication": false,
+      "Route": "/cookies",
+      "Response": {
+        "Optional": false,
+        "Type": "Dynamic",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Get Cookies",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Credentials",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Headers",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Methods",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Origin",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Connection",
+              "Value": "keep-alive"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Encoding",
+              "Value": "gzip"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Length",
+              "Value": "46"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Date",
+              "Value": "Thu, 29 Oct 2015 06:16:29 GMT"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Server",
+              "Value": "nginx/1.6.2"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Vary",
+              "Value": "Accept-Encoding"
+            },
+            {
+              "CheckValue": false,
+              "Name": "X-Powered-By",
+              "Value": "Sails <sailsjs.org>"
+            }
+          ],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "{\"cookies\":{\"foo2\":\"bar\"}}",
+          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Request Headers",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Headers",
+      "RequiresAuthentication": false,
+      "Route": "/headers",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [
+        {
+          "Example": "Lorem ipsum dolor sit amet",
+          "ParamFormat": "Header",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "my-sample-header"
+        }
+      ],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Request Headers",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "my-sample-header",
+              "Value": "Lorem ipsum dolor sit amet"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Response Headers",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Headers",
+      "RequiresAuthentication": false,
+      "Route": "/response-headers",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [
+        {
+          "Example": "text/html",
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Content-Type"
+        },
+        {
+          "Example": "response_headers",
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "test"
+        }
+      ],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Response Headers",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Content-Type",
+              "Value": "text/html"
+            },
+            {
+              "IsNull": false,
+              "Name": "test",
+              "Value": "response_headers"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "GET Request",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Request Methods",
+      "RequiresAuthentication": false,
+      "Route": "/get",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [
+        {
+          "Example": "123",
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "Number",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "test"
+        }
+      ],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "GET Request",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "test",
+              "Value": "123"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "POST Request",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "POST",
+      "Group": "Request Methods",
+      "RequiresAuthentication": false,
+      "Route": "/post",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "POST Request",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "PUT Request",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "PUT",
+      "Group": "Request Methods",
+      "RequiresAuthentication": false,
+      "Route": "/put",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "PUT Request",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "PATCH Request",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "PATCH",
+      "Group": "Request Methods",
+      "RequiresAuthentication": false,
+      "Route": "/patch",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "PATCH Request",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "DELETE Request",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "DELETE",
+      "Group": "Request Methods",
+      "RequiresAuthentication": false,
+      "Route": "/delete",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "DELETE Request",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Response Status Code",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Utilities",
+      "RequiresAuthentication": false,
+      "Route": "/status/200",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Response Status Code",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Streamed Response",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Utilities",
+      "RequiresAuthentication": false,
+      "Route": "/stream/10",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Streamed Response",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Delay Response",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Utilities",
+      "RequiresAuthentication": false,
+      "Route": "/delay/3",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Delay Response",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Get UTF8 Encoded Response",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Utilities",
+      "RequiresAuthentication": false,
+      "Route": "/encoding/utf8",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Get UTF8 Encoded Response",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "GZip Compressed Response",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Utilities",
+      "RequiresAuthentication": false,
+      "Route": "/gzip",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "GZip Compressed Response",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    },
+    {
+      "Name": "Deflate Compressed Response",
+      "Description": "TODO: Add Description",
+      "HTTPMethod": "GET",
+      "Group": "Utilities",
+      "RequiresAuthentication": false,
+      "Route": "/deflate",
+      "Response": {
+        "Optional": false,
+        "Type": "Void",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {},
+        "IsArray": false,
+        "IsMap": false,
+        "Name": "Response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "Parameters": [],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Deflate Compressed Response",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBodyMatchMode": "NONE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false
+    }
+  ],
+  "CustomTypes": [],
+  "CodeGenSettings": {
+    "SynchronyMode": 0,
+    "ModelSerializationScheme": "Json",
+    "ArraySerialization": "Indexed",
+    "Nullify404": false,
+    "UseHttpMethodPrefix": true,
+    "UseModelPrefix": false,
+    "UseExceptionPrefix": true,
+    "UseEnumPrefix": true,
+    "UseControllerPrefix": true,
+    "UseConstructorsForConfig": false,
+    "Timeout": 0.0,
+    "AndroidUseAppManifest": false,
+    "iOSUseAppInfoPlist": false,
+    "iOSGenerateCoreData": false,
+    "CollapseParamsToArray": false,
+    "RunscopeEnabled": false,
+    "AndroidHttpClient": "UNIREST",
+    "ObjCHttpClient": "UNIREST",
+    "CSharpHttpClient": "UNIREST",
+    "NodeHttpClient": "NODE_REQUEST",
+    "JavaUsePropertiesConfig": false,
+    "PHPHttpClient": "UNIREST",
+    "EnableAdditionalModelProperties": false,
+    "PreserveParameterOrder": true,
+    "ValidateRequiredParameters": false,
+    "AppendContentHeaders": true,
+    "GenerateInterfaces": false,
+    "UseCommonSDKLibrary": false,
+    "ParameterArrayFormat": 2,
+    "GenerateTravisConfig": false,
+    "GenerateCircleConfig": false,
+    "GenerateAppveyorConfig": false,
+    "GenerateJenkinsConfig": false,
+    "EnableLogging": false,
+    "EnableHttpCache": false,
+    "Retries": 0,
+    "RetryInterval": 1.0,
+    "GenerateAdvancedDocs": false,
+    "StoreTimezoneInformation": false
+  },
+  "Errors": [],
+  "TestGenSettings": {
+    "Configuration": {},
+    "TestTimeout": 30,
+    "PrecisionDelta": 0.01
+  }
+}
