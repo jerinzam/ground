@@ -1502,7 +1502,7 @@
     "EnableHttpCache": false,
     "Retries": 0,
     "RetryInterval": 1.0,
-    "GenerateAdvancedDocs": false,
+    "GenerateAdvancedDocs": true,
     "StoreTimezoneInformation": false
   },
   "Errors": [],
