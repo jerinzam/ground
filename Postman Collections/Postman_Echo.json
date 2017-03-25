@@ -426,7 +426,7 @@
       "Description": "TODO: Add Description",
       "HTTPMethod": "GET",
       "Group": "Auth: Others",
-      "RequiresAuthentication": false,
+      "RequiresAuthentication": true,
       "Route": "/oauth1",
       "Response": {
         "Optional": false,
