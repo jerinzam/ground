@@ -2,19 +2,28 @@
   "Name": "Postman Echo",
   "BaseUri": "https://echo.getpostman.com",
   "ServerConfiguration": {
-    "Environments": [],
+    "DefaultEnvironment": "production",
+    "DefaultServer": "default",
+    "Environments": [
+      {
+        "Name": "production",
+        "Servers": [
+          {
+            "Name": "default",
+            "Url": "https://echo.getpostman.com"
+          }
+        ]
+      }
+    ],
     "Parameters": []
   },
-  "ImageUri": "",
   "Description": "Postman Echo is service you can use to test your REST clients and make sample API calls. It provides endpoints for `GET`, `POST`, `PUT`, various auth mechanisms and other utility endpoints.\n\nThe documentation for the endpoints as well as example responses can be found at [https://echo.getpostman.com](https://echo.getpostman.com?source=echo-collection-app-onboarding)",
   "Version": "1.0",
   "AdditionalHeaders": [],
   "Authentication": {
     "Type": "Basic",
     "AuthType": "Basic",
-    "Parameters": [],
-    "AuthGrantTypes": [],
-    "AuthScopes": []
+    "Parameters": []
   },
   "Endpoints": [
     {
@@ -30,7 +39,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -38,73 +46,7 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "Parameters": [
-        {
-          "Example": "xWnkliVQJURqB2x1",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "code"
-        },
-        {
-          "Example": "authorization_code",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "grant_type"
-        },
-        {
-          "Example": "https://www.getpostman.com/oauth2/callback",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "redirect_uri"
-        },
-        {
-          "Example": "abc123",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "client_id"
-        },
-        {
-          "Example": "ssh-secret",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "client_secret"
-        }
-      ],
+      "Parameters": [],
       "Errors": [],
       "TestCases": [
         {
@@ -112,33 +54,7 @@
           "Description": "TODO: Add Description",
           "Enabled": true,
           "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "code",
-              "Value": "xWnkliVQJURqB2x1"
-            },
-            {
-              "IsNull": false,
-              "Name": "grant_type",
-              "Value": "authorization_code"
-            },
-            {
-              "IsNull": false,
-              "Name": "redirect_uri",
-              "Value": "https://www.getpostman.com/oauth2/callback"
-            },
-            {
-              "IsNull": false,
-              "Name": "client_id",
-              "Value": "abc123"
-            },
-            {
-              "IsNull": false,
-              "Name": "client_secret",
-              "Value": "ssh-secret"
-            }
-          ],
+          "InputParameters": [],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [],
           "ExpectedHeadersAllowExtra": true,
@@ -163,7 +79,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -171,7 +86,22 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Example": "Digest username=\"postman\", realm=\"Users\", nonce=\"ni1LiL0O37PRRhofWdCLmwFsnEtH1lew\", uri=\"/digest-auth\", response=\"254679099562cf07df9b6f5d8d15db44\", opaque=\"\"",
+          "ParamFormat": "Header",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Authorization",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ],
       "Errors": [],
       "TestCases": [
         {
@@ -179,7 +109,13 @@
           "Description": "TODO: Add Description",
           "Enabled": true,
           "ShouldPass": true,
-          "InputParameters": [],
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Authorization",
+              "Value": "Digest username=\"postman\", realm=\"Users\", nonce=\"ni1LiL0O37PRRhofWdCLmwFsnEtH1lew\", uri=\"/digest-auth\", response=\"254679099562cf07df9b6f5d8d15db44\", opaque=\"\""
+            }
+          ],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [
             {
@@ -326,7 +262,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -334,7 +269,22 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Example": "Basic cG9zdG1hbjpwYXNzd29yZA==",
+          "ParamFormat": "Header",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Authorization",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ],
       "Errors": [
         {
           "ErrorCode": 401,
@@ -347,7 +297,13 @@
           "Description": "TODO: Add Description",
           "Enabled": true,
           "ShouldPass": true,
-          "InputParameters": [],
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Authorization",
+              "Value": "Basic cG9zdG1hbjpwYXNzd29yZA=="
+            }
+          ],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [
             {
@@ -434,7 +390,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -444,69 +399,18 @@
       "CollectParameters": false,
       "Parameters": [
         {
-          "Example": "xWnkliVQJURqB2x1",
-          "ParamFormat": "Form",
+          "Example": "OAuth oauth_consumer_key=\"RKCGzna7bv9YD57c\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1442394747\",oauth_nonce=\"UIGipk\",oauth_version=\"1.0\",oauth_signature=\"CaeyGPr2mns1WCq4Cpm5aLvz6Gs=\"",
+          "ParamFormat": "Header",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "code"
-        },
-        {
-          "Example": "authorization_code",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "grant_type"
-        },
-        {
-          "Example": "https://www.getpostman.com/oauth2/callback",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "redirect_uri"
-        },
-        {
-          "Example": "abc123",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "client_id"
-        },
-        {
-          "Example": "ssh-secret",
-          "ParamFormat": "Form",
-          "Optional": false,
-          "Type": "String",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Attributes": {},
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "client_secret"
+          "Name": "Authorization",
+          "Description": "",
+          "DefaultValue": ""
         }
       ],
       "Errors": [],
@@ -519,28 +423,8 @@
           "InputParameters": [
             {
               "IsNull": false,
-              "Name": "code",
-              "Value": "xWnkliVQJURqB2x1"
-            },
-            {
-              "IsNull": false,
-              "Name": "grant_type",
-              "Value": "authorization_code"
-            },
-            {
-              "IsNull": false,
-              "Name": "redirect_uri",
-              "Value": "https://www.getpostman.com/oauth2/callback"
-            },
-            {
-              "IsNull": false,
-              "Name": "client_id",
-              "Value": "abc123"
-            },
-            {
-              "IsNull": false,
-              "Name": "client_secret",
-              "Value": "ssh-secret"
+              "Name": "Authorization",
+              "Value": "OAuth oauth_consumer_key=\"RKCGzna7bv9YD57c\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1442394747\",oauth_nonce=\"UIGipk\",oauth_version=\"1.0\",oauth_signature=\"CaeyGPr2mns1WCq4Cpm5aLvz6Gs=\""
             }
           ],
           "ExpectedStatus": "200",
@@ -567,7 +451,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -584,10 +467,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "foo1"
+          "Name": "foo1",
+          "Description": "",
+          "DefaultValue": ""
         },
         {
           "Example": "bar2",
@@ -597,10 +481,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "foo2"
+          "Name": "foo2",
+          "Description": "",
+          "DefaultValue": ""
         }
       ],
       "Errors": [],
@@ -708,7 +593,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -725,10 +609,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "foo1"
+          "Name": "foo1",
+          "Description": "",
+          "DefaultValue": ""
         },
         {
           "Example": "",
@@ -738,10 +623,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "foo2"
+          "Name": "foo2",
+          "Description": "",
+          "DefaultValue": ""
         }
       ],
       "Errors": [],
@@ -761,7 +647,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -864,7 +749,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -881,10 +765,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "my-sample-header"
+          "Name": "my-sample-header",
+          "Description": "",
+          "DefaultValue": ""
         }
       ],
       "Errors": [],
@@ -925,7 +810,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -942,10 +826,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "Content-Type"
+          "Name": "Content-Type",
+          "Description": "",
+          "DefaultValue": ""
         },
         {
           "Example": "response_headers",
@@ -955,10 +840,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "test"
+          "Name": "test",
+          "Description": "",
+          "DefaultValue": ""
         }
       ],
       "Errors": [],
@@ -1004,7 +890,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1021,10 +906,11 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
-          "Attributes": {},
           "IsArray": false,
           "IsMap": false,
-          "Name": "test"
+          "Name": "test",
+          "Description": "",
+          "DefaultValue": ""
         }
       ],
       "Errors": [],
@@ -1065,7 +951,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1073,7 +958,22 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Example": "text/plain",
+          "ParamFormat": "Header",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Content-Type",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ],
       "Errors": [],
       "TestCases": [
         {
@@ -1081,7 +981,13 @@
           "Description": "TODO: Add Description",
           "Enabled": true,
           "ShouldPass": true,
-          "InputParameters": [],
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Content-Type",
+              "Value": "text/plain"
+            }
+          ],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [],
           "ExpectedHeadersAllowExtra": true,
@@ -1106,7 +1012,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1147,7 +1052,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1188,7 +1092,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1229,7 +1132,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1270,7 +1172,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1311,7 +1212,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1352,7 +1252,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1393,7 +1292,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1434,7 +1332,6 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
-        "Attributes": {},
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -1505,7 +1402,6 @@
     "GenerateAdvancedDocs": true,
     "StoreTimezoneInformation": false
   },
-  "Errors": [],
   "TestGenSettings": {
     "Configuration": {},
     "TestTimeout": 30,
