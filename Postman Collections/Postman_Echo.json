@@ -1384,6 +1384,7 @@
     "NodeHttpClient": "NODE_REQUEST",
     "JavaUsePropertiesConfig": false,
     "PHPHttpClient": "UNIREST",
+    "EnablePHPComposerVersionString": false,
     "EnableAdditionalModelProperties": false,
     "PreserveParameterOrder": true,
     "ValidateRequiredParameters": false,
