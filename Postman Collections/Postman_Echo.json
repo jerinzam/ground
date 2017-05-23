@@ -1392,6 +1392,10 @@
     "GenerateInterfaces": false,
     "UseCommonSDKLibrary": false,
     "ParameterArrayFormat": 2,
+    "SecurityProtocols": [
+      "Ssl3",
+      "Tls"
+    ],
     "GenerateTravisConfig": false,
     "GenerateCircleConfig": false,
     "GenerateAppveyorConfig": false,
