@@ -81,6 +81,7 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
+        "Example": "{\"authenticated\":true}",
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -91,13 +92,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "Digest username=\"postman\", realm=\"Users\", nonce=\"ni1LiL0O37PRRhofWdCLmwFsnEtH1lew\", uri=\"/digest-auth\", response=\"254679099562cf07df9b6f5d8d15db44\", opaque=\"\"",
           "ParamFormat": "Header",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "Digest username=\"postman\", realm=\"Users\", nonce=\"ni1LiL0O37PRRhofWdCLmwFsnEtH1lew\", uri=\"/digest-auth\", response=\"254679099562cf07df9b6f5d8d15db44\", opaque=\"\"",
           "IsArray": false,
           "IsMap": false,
           "Name": "Authorization",
@@ -121,66 +122,6 @@
           ],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [
-            {
-              "CheckValue": false,
-              "Name": "Access-Control-Allow-Credentials",
-              "Value": ""
-            },
-            {
-              "CheckValue": false,
-              "Name": "Access-Control-Allow-Headers",
-              "Value": ""
-            },
-            {
-              "CheckValue": false,
-              "Name": "Access-Control-Allow-Methods",
-              "Value": ""
-            },
-            {
-              "CheckValue": false,
-              "Name": "Access-Control-Allow-Origin",
-              "Value": ""
-            },
-            {
-              "CheckValue": false,
-              "Name": "Connection",
-              "Value": "keep-alive"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Encoding",
-              "Value": "gzip"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Length",
-              "Value": "42"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Type",
-              "Value": "application/json; charset=utf-8"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Date",
-              "Value": "Thu, 29 Oct 2015 06:17:51 GMT"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Server",
-              "Value": "nginx/1.6.2"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Vary",
-              "Value": "Accept-Encoding"
-            },
-            {
-              "CheckValue": false,
-              "Name": "X-Powered-By",
-              "Value": "Sails <sailsjs.org>"
-            },
             {
               "CheckValue": false,
               "Name": "Access-Control-Allow-Credentials",
@@ -265,6 +206,7 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
+        "Example": "{\"authenticated\":true}",
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -275,13 +217,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "Basic cG9zdG1hbjpwYXNzd29yZA==",
           "ParamFormat": "Header",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "Basic cG9zdG1hbjpwYXNzd29yZA==",
           "IsArray": false,
           "IsMap": false,
           "Name": "Authorization",
@@ -289,12 +231,7 @@
           "DefaultValue": ""
         }
       ],
-      "Errors": [
-        {
-          "ErrorCode": 401,
-          "ErrorMessage": "Unauthorized"
-        }
-      ],
+      "Errors": [],
       "TestCases": [
         {
           "Name": "Basic Auth",
@@ -404,13 +341,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "OAuth oauth_consumer_key=\"RKCGzna7bv9YD57c\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1442394747\",oauth_nonce=\"UIGipk\",oauth_version=\"1.0\",oauth_signature=\"CaeyGPr2mns1WCq4Cpm5aLvz6Gs=\"",
           "ParamFormat": "Header",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "OAuth oauth_consumer_key=\"RKCGzna7bv9YD57c\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1442394747\",oauth_nonce=\"UIGipk\",oauth_version=\"1.0\",oauth_signature=\"CaeyGPr2mns1WCq4Cpm5aLvz6Gs=\"",
           "IsArray": false,
           "IsMap": false,
           "Name": "Authorization",
@@ -456,6 +393,7 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
+        "Example": "{\"cookies\":{\"foo1\":\"bar\",\"foo2\":\"bar\"}}",
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -466,13 +404,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "bar1",
           "ParamFormat": "Query",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "bar1",
           "IsArray": false,
           "IsMap": false,
           "Name": "foo1",
@@ -480,13 +418,13 @@
           "DefaultValue": ""
         },
         {
-          "Example": "bar2",
           "ParamFormat": "Query",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "bar2",
           "IsArray": false,
           "IsMap": false,
           "Name": "foo2",
@@ -599,6 +537,7 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
+        "Example": "{\"cookies\":{\"foo2\":\"bar\"}}",
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -609,13 +548,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "",
           "ParamFormat": "Query",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "",
           "IsArray": false,
           "IsMap": false,
           "Name": "foo1",
@@ -623,13 +562,13 @@
           "DefaultValue": ""
         },
         {
-          "Example": "",
           "ParamFormat": "Query",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "",
           "IsArray": false,
           "IsMap": false,
           "Name": "foo2",
@@ -654,6 +593,7 @@
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
+        "Example": "{\"cookies\":{\"foo2\":\"bar\"}}",
         "IsArray": false,
         "IsMap": false,
         "Name": "Response"
@@ -767,13 +707,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "Lorem ipsum dolor sit amet",
           "ParamFormat": "Header",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "Lorem ipsum dolor sit amet",
           "IsArray": false,
           "IsMap": false,
           "Name": "my-sample-header",
@@ -829,13 +769,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "text/html",
           "ParamFormat": "Query",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "text/html",
           "IsArray": false,
           "IsMap": false,
           "Name": "Content-Type",
@@ -843,13 +783,13 @@
           "DefaultValue": ""
         },
         {
-          "Example": "response_headers",
           "ParamFormat": "Query",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "response_headers",
           "IsArray": false,
           "IsMap": false,
           "Name": "test",
@@ -910,13 +850,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "123",
           "ParamFormat": "Query",
           "Optional": false,
           "Type": "Number",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "123",
           "IsArray": false,
           "IsMap": false,
           "Name": "test",
@@ -972,13 +912,13 @@
       "RequiredScopes": [],
       "Parameters": [
         {
-          "Example": "text/plain",
           "ParamFormat": "Header",
           "Optional": false,
           "Type": "String",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "text/plain",
           "IsArray": false,
           "IsMap": false,
           "Name": "Content-Type",
