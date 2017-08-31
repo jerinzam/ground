@@ -77,7 +77,7 @@
       "Route": "/digest-auth",
       "Response": {
         "Optional": false,
-        "Type": "Dynamic",
+        "Type": "DigestAuth SuccessResponse",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -185,7 +185,7 @@
           ],
           "ExpectedHeadersAllowExtra": true,
           "ExpectedBody": "{\"authenticated\":true}",
-          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedBodyMatchMode": "RAW",
           "ExpectedArrayOrderedMatching": false,
           "ExpectedArrayCheckCount": false,
           "ResponseMatchSchema": true
@@ -202,7 +202,7 @@
       "Route": "/basic-auth",
       "Response": {
         "Optional": false,
-        "Type": "Dynamic",
+        "Type": "Basic AuthResponse",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -310,7 +310,7 @@
           ],
           "ExpectedHeadersAllowExtra": true,
           "ExpectedBody": "{\"authenticated\":true}",
-          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedBodyMatchMode": "RAW",
           "ExpectedArrayOrderedMatching": false,
           "ExpectedArrayCheckCount": false,
           "ResponseMatchSchema": true
@@ -389,7 +389,7 @@
       "Route": "/cookies/set",
       "Response": {
         "Optional": false,
-        "Type": "Dynamic",
+        "Type": "Set CookiesResponse",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -516,7 +516,7 @@
           ],
           "ExpectedHeadersAllowExtra": true,
           "ExpectedBody": "{\"cookies\":{\"foo1\":\"bar\",\"foo2\":\"bar\"}}",
-          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedBodyMatchMode": "RAW",
           "ExpectedArrayOrderedMatching": false,
           "ExpectedArrayCheckCount": false,
           "ResponseMatchSchema": true
@@ -533,7 +533,7 @@
       "Route": "/cookies/delete",
       "Response": {
         "Optional": false,
-        "Type": "Dynamic",
+        "Type": "Delete CookiesResponse",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -589,7 +589,7 @@
       "Route": "/cookies",
       "Response": {
         "Optional": false,
-        "Type": "Dynamic",
+        "Type": "Get CookiesResponse",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -676,7 +676,7 @@
           ],
           "ExpectedHeadersAllowExtra": true,
           "ExpectedBody": "{\"cookies\":{\"foo2\":\"bar\"}}",
-          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedBodyMatchMode": "RAW",
           "ExpectedArrayOrderedMatching": false,
           "ExpectedArrayCheckCount": false,
           "ResponseMatchSchema": true
@@ -1321,7 +1321,146 @@
       "WrapBodyInObject": false
     }
   ],
-  "CustomTypes": [],
+  "CustomTypes": [
+    {
+      "Name": "DigestAuth SuccessResponse",
+      "ImplementationType": "Structure",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "Boolean",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "authenticated",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ]
+    },
+    {
+      "Name": "Basic AuthResponse",
+      "ImplementationType": "Structure",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "Boolean",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "authenticated",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ]
+    },
+    {
+      "Name": "Set CookiesResponse",
+      "ImplementationType": "Structure",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "Cookies",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "cookies",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ]
+    },
+    {
+      "Name": "Cookies",
+      "ImplementationType": "Structure",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "foo1",
+          "Description": "",
+          "DefaultValue": ""
+        },
+        {
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "foo2",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ]
+    },
+    {
+      "Name": "Delete CookiesResponse",
+      "ImplementationType": "Structure",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "Cookies5",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "cookies",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ]
+    },
+    {
+      "Name": "Cookies5",
+      "ImplementationType": "Structure",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "foo2",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ]
+    },
+    {
+      "Name": "Get CookiesResponse",
+      "ImplementationType": "Structure",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "Cookies5",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "cookies",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ]
+    }
+  ],
   "CodeGenSettings": {
     "SynchronyMode": 0,
     "ModelSerializationScheme": "Json",
