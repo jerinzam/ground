@@ -23,7 +23,16 @@
   "Authentication": {
     "Type": "Basic",
     "AuthType": "Basic",
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "username",
+        "TestValue": "postman"
+      },
+      {
+        "Name": "password",
+        "TestValue": "password"
+      }
+    ],
     "Scopes": []
   },
   "Endpoints": [
@@ -47,7 +56,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -90,7 +98,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Header",
@@ -216,7 +223,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Header",
@@ -325,7 +331,7 @@
       "Description": "TODO: Add Description",
       "HTTPMethod": "GET",
       "Group": "Auth: Others",
-      "RequiresAuthentication": true,
+      "RequiresAuthentication": false,
       "Route": "/oauth1",
       "Response": {
         "Optional": false,
@@ -340,7 +346,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Header",
@@ -404,7 +409,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Query",
@@ -549,7 +553,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Query",
@@ -606,7 +609,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -709,7 +711,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Header",
@@ -771,7 +772,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Query",
@@ -852,7 +852,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Query",
@@ -914,7 +913,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [
         {
           "ParamFormat": "Header",
@@ -976,7 +974,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1017,7 +1014,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1058,7 +1054,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1099,7 +1094,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1140,7 +1134,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1181,7 +1174,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1222,7 +1214,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1263,7 +1254,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
@@ -1304,7 +1294,6 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "RequiredScopes": [],
       "Parameters": [],
       "Errors": [],
       "TestCases": [
