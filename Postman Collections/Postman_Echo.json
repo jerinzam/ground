@@ -584,7 +584,95 @@
         }
       ],
       "Errors": [],
-      "TestCases": [],
+      "TestCases": [
+        {
+          "Name": "Delete Cookies",
+          "Description": "TODO: Add Description",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "foo1",
+              "Value": ""
+            },
+            {
+              "IsNull": false,
+              "Name": "foo2",
+              "Value": ""
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Credentials",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Headers",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Methods",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Access-Control-Allow-Origin",
+              "Value": ""
+            },
+            {
+              "CheckValue": false,
+              "Name": "Connection",
+              "Value": "keep-alive"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Encoding",
+              "Value": "gzip"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Length",
+              "Value": "46"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Date",
+              "Value": "Thu, 29 Oct 2015 06:16:00 GMT"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Server",
+              "Value": "nginx/1.6.2"
+            },
+            {
+              "CheckValue": false,
+              "Name": "Vary",
+              "Value": "Accept-Encoding"
+            },
+            {
+              "CheckValue": false,
+              "Name": "X-Powered-By",
+              "Value": "Sails <sailsjs.org>"
+            }
+          ],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "{\"cookies\":{\"foo2\":\"bar\"}}",
+          "ExpectedBodyMatchMode": "RAW",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
       "WrapBodyInObject": false
     },
     {
