@@ -1414,6 +1414,7 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "true",
           "IsArray": false,
           "IsMap": false,
           "Name": "authenticated",
@@ -1432,6 +1433,7 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "true",
           "IsArray": false,
           "IsMap": false,
           "Name": "authenticated",
@@ -1450,6 +1452,7 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "{\"foo1\":\"bar\",\"foo2\":\"bar\"}",
           "IsArray": false,
           "IsMap": false,
           "Name": "cookies",
@@ -1468,6 +1471,7 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "bar",
           "IsArray": false,
           "IsMap": false,
           "Name": "foo1",
@@ -1480,13 +1484,15 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "bar",
           "IsArray": false,
           "IsMap": false,
           "Name": "foo2",
           "Description": "",
           "DefaultValue": ""
         }
-      ]
+      ],
+      "ExampleValue": "{\"foo1\":\"bar\",\"foo2\":\"bar\"}"
     },
     {
       "Name": "Delete CookiesResponse",
@@ -1498,6 +1504,7 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "{\"foo2\":\"bar\"}",
           "IsArray": false,
           "IsMap": false,
           "Name": "cookies",
@@ -1516,13 +1523,15 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "bar",
           "IsArray": false,
           "IsMap": false,
           "Name": "foo2",
           "Description": "",
           "DefaultValue": ""
         }
-      ]
+      ],
+      "ExampleValue": "{\"foo2\":\"bar\"}"
     },
     {
       "Name": "Get CookiesResponse",
@@ -1534,6 +1543,7 @@
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
+          "Example": "{\"foo2\":\"bar\"}",
           "IsArray": false,
           "IsMap": false,
           "Name": "cookies",
