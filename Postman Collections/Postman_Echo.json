@@ -86,7 +86,7 @@
       "Route": "/digest-auth",
       "Response": {
         "Optional": false,
-        "Type": "DigestAuth SuccessResponse",
+        "Type": "200",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -94,7 +94,7 @@
         "Nullable": false,
         "IsArray": false,
         "IsMap": false,
-        "Name": "Response"
+        "Name": "200"
       },
       "ResponseCode": 200,
       "HasOptionalQueryParams": false,
@@ -213,7 +213,7 @@
       "Route": "/basic-auth",
       "Response": {
         "Optional": false,
-        "Type": "Basic AuthResponse",
+        "Type": "200",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -221,7 +221,7 @@
         "Nullable": false,
         "IsArray": false,
         "IsMap": false,
-        "Name": "Response"
+        "Name": "200"
       },
       "ResponseCode": 200,
       "HasOptionalQueryParams": false,
@@ -403,7 +403,7 @@
       "Route": "/cookies/set",
       "Response": {
         "Optional": false,
-        "Type": "Set CookiesResponse",
+        "Type": "Cookies",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -411,7 +411,7 @@
         "Nullable": false,
         "IsArray": false,
         "IsMap": false,
-        "Name": "Response"
+        "Name": "Cookies"
       },
       "ResponseCode": 200,
       "HasOptionalQueryParams": false,
@@ -550,7 +550,7 @@
       "Route": "/cookies/delete",
       "Response": {
         "Optional": false,
-        "Type": "Delete CookiesResponse",
+        "Type": "Cookies Response",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -558,7 +558,7 @@
         "Nullable": false,
         "IsArray": false,
         "IsMap": false,
-        "Name": "Response"
+        "Name": "Cookies Response"
       },
       "ResponseCode": 200,
       "HasOptionalQueryParams": false,
@@ -697,7 +697,7 @@
       "Route": "/cookies",
       "Response": {
         "Optional": false,
-        "Type": "Get CookiesResponse",
+        "Type": "Cookies6",
         "Constant": false,
         "IsStream": false,
         "IsAttribute": false,
@@ -705,7 +705,7 @@
         "Nullable": false,
         "IsArray": false,
         "IsMap": false,
-        "Name": "Response"
+        "Name": "Cookies"
       },
       "ResponseCode": 200,
       "HasOptionalQueryParams": false,
@@ -1437,7 +1437,7 @@
   ],
   "CustomTypes": [
     {
-      "Name": "DigestAuth SuccessResponse",
+      "Name": "200",
       "ImplementationType": "Structure",
       "Fields": [
         {
@@ -1457,32 +1457,12 @@
       ]
     },
     {
-      "Name": "Basic AuthResponse",
+      "Name": "Cookies",
       "ImplementationType": "Structure",
       "Fields": [
         {
           "Optional": false,
-          "Type": "Boolean",
-          "Constant": false,
-          "IsStream": false,
-          "IsAttribute": false,
-          "Example": "true",
-          "Nullable": false,
-          "IsArray": false,
-          "IsMap": false,
-          "Name": "authenticated",
-          "Description": "",
-          "DefaultValue": ""
-        }
-      ]
-    },
-    {
-      "Name": "Set CookiesResponse",
-      "ImplementationType": "Structure",
-      "Fields": [
-        {
-          "Optional": false,
-          "Type": "Cookies",
+          "Type": "Cookies3",
           "Constant": false,
           "IsStream": false,
           "IsAttribute": false,
@@ -1497,7 +1477,7 @@
       ]
     },
     {
-      "Name": "Cookies",
+      "Name": "Cookies3",
       "ImplementationType": "Structure",
       "Fields": [
         {
@@ -1534,7 +1514,7 @@
       "ExampleValue": "{\"foo1\":\"bar\",\"foo2\":\"bar\"}"
     },
     {
-      "Name": "Delete CookiesResponse",
+      "Name": "Cookies Response",
       "ImplementationType": "Structure",
       "Fields": [
         {
@@ -1576,7 +1556,7 @@
       "ExampleValue": "{\"foo2\":\"bar\"}"
     },
     {
-      "Name": "Get CookiesResponse",
+      "Name": "Cookies6",
       "ImplementationType": "Structure",
       "Fields": [
         {
