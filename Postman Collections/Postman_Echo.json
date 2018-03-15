@@ -33,7 +33,8 @@
         "TestValue": "password"
       }
     ],
-    "Scopes": []
+    "Scopes": [],
+    "ParamFormats": {}
   },
   "Endpoints": [
     {
@@ -1622,7 +1623,8 @@
     "GenerateAdvancedDocs": true,
     "StoreTimezoneInformation": false,
     "UnderscoreNumbers": true,
-    "UseSingletonPattern": true
+    "UseSingletonPattern": true,
+    "IgnoreIfNullJson": false
   },
   "Errors": [],
   "TestGenSettings": {
