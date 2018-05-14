@@ -207,7 +207,14 @@
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
       "Parameters": [],
-      "Errors": [],
+      "Errors": [
+        {
+          "ErrorCode": 401,
+          "ErrorMessage": "Unauthorized",
+          "ErrorTypeName": "",
+          "ExampleValue": ""
+        }
+      ],
       "TestCases": [
         {
           "Name": "Basic Auth",
