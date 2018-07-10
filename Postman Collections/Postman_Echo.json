@@ -980,6 +980,21 @@
           "Name": "Content-Type",
           "Description": "",
           "DefaultValue": ""
+        },
+        {
+          "ParamFormat": "Body",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Example": "Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium. Praesent neque quam, tincidunt nec leo eget, rutrum vehicula magna.\nMaecenas consequat elementum elit, id semper sem tristique et. Integer pulvinar enim quis consectetur interdum volutpat.",
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Body",
+          "Description": "",
+          "DefaultValue": ""
         }
       ],
       "Errors": [],
@@ -994,6 +1009,11 @@
               "IsNull": false,
               "Name": "Content-Type",
               "Value": "text/plain"
+            },
+            {
+              "IsNull": false,
+              "Name": "Body",
+              "Value": "Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium. Praesent neque quam, tincidunt nec leo eget, rutrum vehicula magna.\nMaecenas consequat elementum elit, id semper sem tristique et. Integer pulvinar enim quis consectetur interdum volutpat."
             }
           ],
           "ExpectedStatus": "200",
@@ -1028,7 +1048,23 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "Parameters": [],
+      "Parameters": [
+        {
+          "ParamFormat": "Body",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Example": "Etiam mi lacus, cursus vitae felis et, blandit pellentesque neque. Vestibulum eget nisi a tortor commodo dignissim.\nQuisque ipsum ligula, faucibus a felis a, commodo elementum nisl. Mauris vulputate sapien et tincidunt viverra. Donec vitae velit nec metus.",
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Body",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ],
       "Errors": [],
       "TestCases": [
         {
@@ -1036,7 +1072,13 @@
           "Description": "The HTTP `PUT` request method is similar to HTTP `POST`. It too is meant to \ntransfer data to a server (and elicit a response). What data is returned depends on the implementation\nof the server.\n\nA `PUT` request can pass parameters to the server using \"Query String \nParameters\", as well as the Request Body. For example, in the following \nraw HTTP request,\n\n> PUT /hi/there?hand=wave\n>\n> <request-body>\n\n\n",
           "Enabled": true,
           "ShouldPass": true,
-          "InputParameters": [],
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Body",
+              "Value": "Etiam mi lacus, cursus vitae felis et, blandit pellentesque neque. Vestibulum eget nisi a tortor commodo dignissim.\nQuisque ipsum ligula, faucibus a felis a, commodo elementum nisl. Mauris vulputate sapien et tincidunt viverra. Donec vitae velit nec metus."
+            }
+          ],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [],
           "ExpectedHeadersAllowExtra": true,
@@ -1069,7 +1111,23 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "Parameters": [],
+      "Parameters": [
+        {
+          "ParamFormat": "Body",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Example": "Curabitur auctor, elit nec pulvinar porttitor, ex augue condimentum enim, eget suscipit urna felis quis neque.\nSuspendisse sit amet luctus massa, nec venenatis mi. Suspendisse tincidunt massa at nibh efficitur fringilla. Nam quis congue mi. Etiam volutpat.",
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Body",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ],
       "Errors": [],
       "TestCases": [
         {
@@ -1077,7 +1135,13 @@
           "Description": "The HTTP `PATCH` method is used to update resources on a server. The exact\nuse of `PATCH` requests depends on the server in question. There are a number\nof server implementations which handle `PATCH` differently. Technically, \n`PATCH` supports both Query String parameters and a Request Body.\n\nThis endpoint accepts an HTTP `PATCH` request and provides debug information\nsuch as the HTTP headers, Query String arguments, and the Request Body.",
           "Enabled": true,
           "ShouldPass": true,
-          "InputParameters": [],
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Body",
+              "Value": "Curabitur auctor, elit nec pulvinar porttitor, ex augue condimentum enim, eget suscipit urna felis quis neque.\nSuspendisse sit amet luctus massa, nec venenatis mi. Suspendisse tincidunt massa at nibh efficitur fringilla. Nam quis congue mi. Etiam volutpat."
+            }
+          ],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [],
           "ExpectedHeadersAllowExtra": true,
@@ -1110,7 +1174,23 @@
       "HasOptionalQueryParams": false,
       "HasOptionalFieldParams": false,
       "CollectParameters": false,
-      "Parameters": [],
+      "Parameters": [
+        {
+          "ParamFormat": "Body",
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Example": "Donec fermentum, nisi sed cursus eleifend, nulla tortor ultricies tellus, ut vehicula orci arcu ut velit. In volutpat egestas dapibus. \nMorbi condimentum vestibulum sapien. Etiam dignissim diam quis eros lobortis gravida vel lobortis est. Etiam gravida sed.",
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Name": "Body",
+          "Description": "",
+          "DefaultValue": ""
+        }
+      ],
       "Errors": [],
       "TestCases": [
         {
@@ -1118,7 +1198,13 @@
           "Description": "The HTTP `DELETE` method is used to delete resources on a server. The exact\nuse of `DELETE` requests depends on the server implementation. In general, \n`DELETE` requests support both, Query String parameters as well as a Request \nBody.\n\nThis endpoint accepts an HTTP `DELETE` request and provides debug information\nsuch as the HTTP headers, Query String arguments, and the Request Body.",
           "Enabled": true,
           "ShouldPass": true,
-          "InputParameters": [],
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Body",
+              "Value": "Donec fermentum, nisi sed cursus eleifend, nulla tortor ultricies tellus, ut vehicula orci arcu ut velit. In volutpat egestas dapibus. \nMorbi condimentum vestibulum sapien. Etiam dignissim diam quis eros lobortis gravida vel lobortis est. Etiam gravida sed."
+            }
+          ],
           "ExpectedStatus": "200",
           "ExpectedHeaders": [],
           "ExpectedHeadersAllowExtra": true,
