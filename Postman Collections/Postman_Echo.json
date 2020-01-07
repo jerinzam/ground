@@ -2592,6 +2592,7 @@
   "ExportSettings": {
     "ExportExtensions": false,
     "UseDateTimeOnlyInRaml": false,
-    "SetPostmanParamValuesAsVariables": false
+    "SetPostmanParamValuesAsVariables": false,
+    "WrapResponseFieldInWsdl": true
   }
 }
