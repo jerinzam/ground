@@ -93,7 +93,7 @@
       "Route": "/digest-auth",
       "Response": {
         "Optional": false,
-        "Type": "200",
+        "Type": "m200",
         "IsSdlNativeType": false,
         "Constant": false,
         "IsStream": false,
@@ -366,7 +366,7 @@
       "Route": "/basic-auth",
       "Response": {
         "Optional": false,
-        "Type": "200",
+        "Type": "m200",
         "IsSdlNativeType": false,
         "Constant": false,
         "IsStream": false,
@@ -2358,7 +2358,7 @@
   ],
   "CustomTypes": [
     {
-      "Name": "200",
+      "Name": "m200",
       "ImplementationType": "Structure",
       "Fields": [
         {
@@ -2589,7 +2589,8 @@
       "EndpointName": ""
     },
     "IsLatestVersion": false,
-    "EnableImmutableModels": false
+    "EnableImmutableModels": false,
+    "UseEndpointMethodName": false
   },
   "Errors": [],
   "TestGenSettings": {
