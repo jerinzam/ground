@@ -45,6 +45,7 @@
       "Group": "Auth: Digest",
       "RequiresAuthentication": true,
       "Route": "/digest-auth",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -91,6 +92,7 @@
       "Group": "Auth: Digest",
       "RequiresAuthentication": false,
       "Route": "/digest-auth",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "m200",
@@ -364,6 +366,7 @@
       "Group": "Auth: Others",
       "RequiresAuthentication": true,
       "Route": "/basic-auth",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "m200",
@@ -618,6 +621,7 @@
       "Group": "Auth: Others",
       "RequiresAuthentication": false,
       "Route": "/oauth1",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -688,6 +692,7 @@
       "Group": "Cookies",
       "RequiresAuthentication": true,
       "Route": "/cookies/set",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Cookies",
@@ -983,6 +988,7 @@
       "Group": "Cookies",
       "RequiresAuthentication": true,
       "Route": "/cookies/delete",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Cookies Response",
@@ -1278,6 +1284,7 @@
       "Group": "Cookies",
       "RequiresAuthentication": true,
       "Route": "/cookies",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Cookies3",
@@ -1527,6 +1534,7 @@
       "Group": "Headers",
       "RequiresAuthentication": true,
       "Route": "/headers",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -1597,6 +1605,7 @@
       "Group": "Headers",
       "RequiresAuthentication": true,
       "Route": "/response-headers",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -1689,6 +1698,7 @@
       "Group": "Request Methods",
       "RequiresAuthentication": true,
       "Route": "/get",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -1760,6 +1770,7 @@
       "RequestContentType": "text/plain",
       "RequiresAuthentication": true,
       "Route": "/post",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -1852,6 +1863,7 @@
       "Group": "Request Methods",
       "RequiresAuthentication": true,
       "Route": "/put",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -1922,6 +1934,7 @@
       "Group": "Request Methods",
       "RequiresAuthentication": true,
       "Route": "/patch",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -1992,6 +2005,7 @@
       "Group": "Request Methods",
       "RequiresAuthentication": true,
       "Route": "/delete",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -2062,6 +2076,7 @@
       "Group": "Utilities",
       "RequiresAuthentication": true,
       "Route": "/status/200",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -2108,6 +2123,7 @@
       "Group": "Utilities",
       "RequiresAuthentication": true,
       "Route": "/stream/10",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -2154,6 +2170,7 @@
       "Group": "Utilities",
       "RequiresAuthentication": true,
       "Route": "/delay/3",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -2200,6 +2217,7 @@
       "Group": "Utilities",
       "RequiresAuthentication": true,
       "Route": "/encoding/utf8",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -2246,6 +2264,7 @@
       "Group": "Utilities",
       "RequiresAuthentication": true,
       "Route": "/gzip",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -2292,6 +2311,7 @@
       "Group": "Utilities",
       "RequiresAuthentication": true,
       "Route": "/deflate",
+      "Responses": {},
       "Response": {
         "Optional": false,
         "Type": "Void",
@@ -2514,6 +2534,7 @@
       "Deprecated": false
     }
   ],
+  "UserDefinedImportedTypes": [],
   "CodeGenSettings": {
     "SynchronyMode": "Asynchronous",
     "ModelSerializationScheme": "Json",
