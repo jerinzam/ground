@@ -2,6 +2,7 @@
   "Name": "Postman Echo",
   "BaseUri": "https://echo.getpostman.com",
   "ServerConfiguration": {
+    "UseParent": false,
     "DefaultEnvironment": "production",
     "DefaultServer": "Server 1",
     "Environments": [
@@ -2610,9 +2611,11 @@
       "EndpointName": ""
     },
     "IsLatestVersion": false,
+    "CustomDependencies": [],
     "EnableImmutableModels": false,
     "UseEndpointMethodName": false,
-    "EncodeTemplateParameters": true
+    "EncodeTemplateParameters": true,
+    "GenerateExamplesForOptionalFields": false
   },
   "Errors": [],
   "TestGenSettings": {
@@ -2620,6 +2623,8 @@
     "TestTimeout": 30,
     "PrecisionDelta": 0.01
   },
+  "Roles": [],
+  "Namespaces": [],
   "ExportSettings": {
     "ExportExtensions": false,
     "UseDateTimeOnlyInRaml": false,
