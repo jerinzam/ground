@@ -94,7 +94,124 @@
       "Group": "Auth: Digest",
       "RequiresAuthentication": false,
       "Route": "/digest-auth",
-      "Responses": {},
+      "Responses": {
+        "200": {
+          "Name": "200",
+          "Description": "OK",
+          "Headers": [
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Connection",
+              "DefaultValue": "keep-alive"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Encoding",
+              "DefaultValue": "gzip"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Length",
+              "DefaultValue": "42"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Date",
+              "DefaultValue": "Thu, 29 Oct 2015 06:17:51 GMT"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Server",
+              "DefaultValue": "nginx/1.6.2"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Vary",
+              "DefaultValue": "Accept-Encoding"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "X-Powered-By",
+              "DefaultValue": "Sails <sailsjs.org>"
+            }
+          ],
+          "BodyContent": {
+            "application/json; charset=utf-8": {
+              "Type": "m200",
+              "IsSdlNativeType": false,
+              "Constant": false,
+              "Example": "{\"authenticated\":true}",
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false
+            }
+          }
+        }
+      },
       "Response": {
         "Optional": false,
         "Type": "m200",
@@ -323,6 +440,11 @@
           "ExpectedHeaders": [
             {
               "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
               "Name": "Connection",
               "Value": "keep-alive"
             },
@@ -335,11 +457,6 @@
               "CheckValue": false,
               "Name": "Content-Length",
               "Value": "42"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Type",
-              "Value": "application/json; charset=utf-8"
             },
             {
               "CheckValue": false,
@@ -368,6 +485,33 @@
           "ExpectedArrayOrderedMatching": false,
           "ExpectedArrayCheckCount": false,
           "ResponseMatchSchema": true
+        },
+        {
+          "Name": "DigestAuth Success1",
+          "Description": "This endpoint sends a hashed Digest Authorization header to gain access to a valid `200 Ok` response code. In Postman, it uses the stored [global variables](https://www.getpostman.com/docs/environments#gloval-variables?source=echo-collection-app-onboarding), `echo_digest_realm` and `echo_digest_nonce`, to generate the hashed authorisation header.\n\nWithin Postman, for this request to successfully authenticate, running the previous request \"DigestAuth Request\" stores the relevant information within the global variables.",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "Authorization",
+              "Value": "Digest username=\"postman\", realm=\"Users\", nonce=\"ni1LiL0O37PRRhofWdCLmwFsnEtH1lew\", uri=\"/digest-auth\", response=\"254679099562cf07df9b6f5d8d15db44\", opaque=\"\""
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [
+            {
+              "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            }
+          ],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "{\"authenticated\":true}",
+          "ExpectedBodyMatchMode": "KEYS",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
         }
       ],
       "WrapBodyInObject": false,
@@ -382,7 +526,226 @@
       "Group": "Auth: Others",
       "RequiresAuthentication": true,
       "Route": "/basic-auth",
-      "Responses": {},
+      "Responses": {
+        "200": {
+          "Name": "200",
+          "Description": "OK",
+          "Headers": [
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Connection",
+              "DefaultValue": "keep-alive"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Encoding",
+              "DefaultValue": "gzip"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Length",
+              "DefaultValue": "42"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Date",
+              "DefaultValue": "Sat, 31 Oct 2015 06:38:25 GMT"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Server",
+              "DefaultValue": "nginx/1.6.2"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Vary",
+              "DefaultValue": "Accept-Encoding"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "X-Powered-By",
+              "DefaultValue": "Sails <sailsjs.org>"
+            }
+          ],
+          "BodyContent": {
+            "application/json; charset=utf-8": {
+              "Type": "m200",
+              "IsSdlNativeType": false,
+              "Constant": false,
+              "Example": "{\"authenticated\":true}",
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false
+            }
+          }
+        },
+        "401": {
+          "Name": "401",
+          "Description": "Unauthorized",
+          "Headers": [
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Connection",
+              "DefaultValue": "keep-alive"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Date",
+              "DefaultValue": "Sat, 31 Oct 2015 06:38:51 GMT"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Server",
+              "DefaultValue": "nginx/1.6.2"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "WWW-Authenticate",
+              "DefaultValue": "Basic realm=\"Users\""
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "X-Powered-By",
+              "DefaultValue": "Sails <sailsjs.org>"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "transfer-encoding",
+              "DefaultValue": "chunked"
+            }
+          ],
+          "BodyContent": {
+            "text/plain": {
+              "Type": "String",
+              "IsSdlNativeType": true,
+              "Constant": false,
+              "Example": "Unauthorized",
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false
+            }
+          }
+        }
+      },
       "Response": {
         "Optional": false,
         "Type": "m200",
@@ -591,6 +954,11 @@
           "ExpectedHeaders": [
             {
               "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
               "Name": "Connection",
               "Value": "keep-alive"
             },
@@ -603,11 +971,6 @@
               "CheckValue": false,
               "Name": "Content-Length",
               "Value": "42"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Type",
-              "Value": "application/json; charset=utf-8"
             },
             {
               "CheckValue": false,
@@ -723,7 +1086,124 @@
       "Group": "Cookies",
       "RequiresAuthentication": true,
       "Route": "/cookies/set",
-      "Responses": {},
+      "Responses": {
+        "200": {
+          "Name": "Cookies",
+          "Description": "OK",
+          "Headers": [
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Connection",
+              "DefaultValue": "keep-alive"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Encoding",
+              "DefaultValue": "gzip"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Length",
+              "DefaultValue": "51"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Date",
+              "DefaultValue": "Thu, 29 Oct 2015 06:15:28 GMT"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Server",
+              "DefaultValue": "nginx/1.6.2"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Vary",
+              "DefaultValue": "Accept-Encoding"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "X-Powered-By",
+              "DefaultValue": "Sails <sailsjs.org>"
+            }
+          ],
+          "BodyContent": {
+            "application/json; charset=utf-8": {
+              "Type": "Cookies",
+              "IsSdlNativeType": false,
+              "Constant": false,
+              "Example": "{\"cookies\":{\"foo1\":\"bar\",\"foo2\":\"bar\"}}",
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false
+            }
+          }
+        }
+      },
       "Response": {
         "Optional": false,
         "Type": "Cookies",
@@ -975,6 +1455,11 @@
           "ExpectedHeaders": [
             {
               "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
               "Name": "Connection",
               "Value": "keep-alive"
             },
@@ -987,11 +1472,6 @@
               "CheckValue": false,
               "Name": "Content-Length",
               "Value": "51"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Type",
-              "Value": "application/json; charset=utf-8"
             },
             {
               "CheckValue": false,
@@ -1034,7 +1514,124 @@
       "Group": "Cookies",
       "RequiresAuthentication": true,
       "Route": "/cookies/delete",
-      "Responses": {},
+      "Responses": {
+        "200": {
+          "Name": "Cookies Response",
+          "Description": "OK",
+          "Headers": [
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Connection",
+              "DefaultValue": "keep-alive"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Encoding",
+              "DefaultValue": "gzip"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Length",
+              "DefaultValue": "46"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Date",
+              "DefaultValue": "Thu, 29 Oct 2015 06:16:00 GMT"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Server",
+              "DefaultValue": "nginx/1.6.2"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Vary",
+              "DefaultValue": "Accept-Encoding"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "X-Powered-By",
+              "DefaultValue": "Sails <sailsjs.org>"
+            }
+          ],
+          "BodyContent": {
+            "application/json; charset=utf-8": {
+              "Type": "Cookies Response",
+              "IsSdlNativeType": false,
+              "Constant": false,
+              "Example": "{\"cookies\":{\"foo2\":\"bar\"}}",
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false
+            }
+          }
+        }
+      },
       "Response": {
         "Optional": false,
         "Type": "Cookies Response",
@@ -1286,6 +1883,11 @@
           "ExpectedHeaders": [
             {
               "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
               "Name": "Connection",
               "Value": "keep-alive"
             },
@@ -1298,11 +1900,6 @@
               "CheckValue": false,
               "Name": "Content-Length",
               "Value": "46"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Type",
-              "Value": "application/json; charset=utf-8"
             },
             {
               "CheckValue": false,
@@ -1345,7 +1942,124 @@
       "Group": "Cookies",
       "RequiresAuthentication": true,
       "Route": "/cookies",
-      "Responses": {},
+      "Responses": {
+        "200": {
+          "Name": "Cookies",
+          "Description": "OK",
+          "Headers": [
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Connection",
+              "DefaultValue": "keep-alive"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Encoding",
+              "DefaultValue": "gzip"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Content-Length",
+              "DefaultValue": "46"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Date",
+              "DefaultValue": "Thu, 29 Oct 2015 06:16:29 GMT"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Server",
+              "DefaultValue": "nginx/1.6.2"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "Vary",
+              "DefaultValue": "Accept-Encoding"
+            },
+            {
+              "Optional": false,
+              "Type": "String",
+              "Constant": false,
+              "IsStream": false,
+              "IsAttribute": false,
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false,
+              "Deprecated": false,
+              "Name": "X-Powered-By",
+              "DefaultValue": "Sails <sailsjs.org>"
+            }
+          ],
+          "BodyContent": {
+            "application/json; charset=utf-8": {
+              "Type": "Cookies3",
+              "IsSdlNativeType": false,
+              "Constant": false,
+              "Example": "{\"cookies\":{\"foo2\":\"bar\"}}",
+              "Nullable": false,
+              "IsArray": false,
+              "IsMap": false,
+              "IsArrayOfMap": false
+            }
+          }
+        }
+      },
       "Response": {
         "Optional": false,
         "Type": "Cookies3",
@@ -1549,6 +2263,11 @@
           "ExpectedHeaders": [
             {
               "CheckValue": false,
+              "Name": "Content-Type",
+              "Value": "application/json; charset=utf-8"
+            },
+            {
+              "CheckValue": false,
               "Name": "Connection",
               "Value": "keep-alive"
             },
@@ -1561,11 +2280,6 @@
               "CheckValue": false,
               "Name": "Content-Length",
               "Value": "46"
-            },
-            {
-              "CheckValue": false,
-              "Name": "Content-Type",
-              "Value": "application/json; charset=utf-8"
             },
             {
               "CheckValue": false,
@@ -2495,7 +3209,8 @@
         }
       ],
       "ExampleValue": "{\"authenticated\":true}",
-      "Deprecated": false
+      "Deprecated": false,
+      "IsXmlType": false
     },
     {
       "Name": "Cookies",
@@ -2519,7 +3234,8 @@
         }
       ],
       "ExampleValue": "{\"cookies\":{\"foo1\":\"bar\",\"foo2\":\"bar\"}}",
-      "Deprecated": false
+      "Deprecated": false,
+      "IsXmlType": false
     },
     {
       "Name": "Cookies1",
@@ -2561,7 +3277,8 @@
         }
       ],
       "ExampleValue": "{\"foo1\":\"bar\",\"foo2\":\"bar\"}",
-      "Deprecated": false
+      "Deprecated": false,
+      "IsXmlType": false
     },
     {
       "Name": "Cookies Response",
@@ -2585,7 +3302,8 @@
         }
       ],
       "ExampleValue": "{\"cookies\":{\"foo2\":\"bar\"}}",
-      "Deprecated": false
+      "Deprecated": false,
+      "IsXmlType": false
     },
     {
       "Name": "Cookies2",
@@ -2610,7 +3328,8 @@
         }
       ],
       "ExampleValue": "{\"foo2\":\"bar\"}",
-      "Deprecated": false
+      "Deprecated": false,
+      "IsXmlType": false
     },
     {
       "Name": "Cookies3",
@@ -2634,7 +3353,8 @@
         }
       ],
       "ExampleValue": "{\"cookies\":{\"foo2\":\"bar\"}}",
-      "Deprecated": false
+      "Deprecated": false,
+      "IsXmlType": false
     }
   ],
   "UserDefinedImportedTypes": [],
@@ -2735,7 +3455,8 @@
     "EncodeTemplateParameters": true,
     "GenerateExamplesForOptionalFields": false,
     "MultitargetDotnetVersions": false,
-    "BackoffMax": 0.0
+    "BackoffMax": 0.0,
+    "RetryOnTimeout": true
   },
   "Errors": [],
   "TestGenSettings": {
