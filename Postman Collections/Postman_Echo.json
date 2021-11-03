@@ -3134,7 +3134,7 @@
           "NotTypes": [],
           "Type": "String",
           "IsSdlNativeType": true,
-          "Constant": false,
+          "Constant": true,
           "IsStream": false,
           "IsAttribute": false,
           "Example": "text/plain",
@@ -3146,7 +3146,7 @@
           "Deprecated": false,
           "Name": "Content-Type",
           "Description": "",
-          "DefaultValue": ""
+          "DefaultValue": "text/plain"
         },
         {
           "ParamFormat": "Body",
